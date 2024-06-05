@@ -46,3 +46,12 @@ export function available(req, res) {
     .then(responseWithResult(res));
   //.catch 처리하자.
 }
+
+export function unavailable(req, res) {
+  return User.unavailable(req.body.email)
+    .then((user) => {
+      return "저 손님 못받아유...";
+    })
+    .then(responseWithResult(res));
+  //.catch 처리하자.
+}
